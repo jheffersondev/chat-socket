@@ -7,12 +7,15 @@ app.use(require("express").json())
 app.use(require("express").urlencoded({extended: true}))
 
 app.get("/", (req, res) => {
-    res.sendFile(__dirname +  "/index.html")
+    res.sendFile(__dirname +  "/views/index.html")
+  
 })
 
 app.post("/message", (req, res) => {
     var message = req.body.message
     io.emit("newmessage", message)
+
+    res.json({status: "success"})
 })
 
 io.on('connection', (socket) => {
@@ -22,6 +25,7 @@ io.on('connection', (socket) => {
         console.log("Este cliente desconectou")
     })
 })
+
 
 http.listen(80, (err) => {
     if(!err) console.log("Servidor iniciado com sucesso")
