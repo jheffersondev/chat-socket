@@ -13,7 +13,7 @@
  - npm install - installs the needed dependencies..
  - node index - starts the server.
 
-## Acesss
+## Access
 > By default your application is running at __3000__ port, so make sure isn't using this port
 ```
 http://localhost:3000/
