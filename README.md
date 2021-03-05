@@ -1,19 +1,26 @@
-# Chat-socket
-> Aprendendo a trabalhar com sockets em Node.JS com a lib socket.io
+# Socket.io - Simple chat messenger
+## Learning to work with sockets on Node.js using Socket.io.
 
-> Seguindo a documentação Get Started do [socket.io](https://socket.io/get-started/chat/), esse projeto tem uma simples interface(formúlario) que permite a comunicação de vários clientes(sockets) conectados ao mesmo tempo, em tempo real.
+> Based on Get Started from socket.io  documentation, this project is a simple interface that allows multiple clients communicates in realtime, at the same time.
 
-## Módulos utilizados
+## Commands
+> Run the following commands on your terminal
+``` 
+ npm install
+ node index 
+```
+
+ - npm install - installs the needed dependencies..
+ - node index - starts the server.
+
+## Acesss
+> By default your application is running at __3000__ port, so make sure isn't using this port
+```
+http://localhost:3000/
+```
+
+## Dependencies and docs
  - [Express](https://expressjs.com/)
  - [Socket.io](https://socket.io/docs/)
 
-## Instalação e utilização
-``` 
-npm install express
-npm install socket.io
-node index.js
-```
 
-
-## Referências
-[Documentação Socket.io](https://socket.io/get-started/chat/)

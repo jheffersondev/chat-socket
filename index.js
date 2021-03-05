@@ -7,8 +7,7 @@ app.use(require("express").json())
 app.use(require("express").urlencoded({extended: true}))
 
 app.get("/", (req, res) => {
-    res.sendFile(__dirname +  "/views/index.html")
-  
+    res.sendFile(__dirname +  "/views/index.html")  
 })
 
 app.post("/message", (req, res) => {
@@ -19,15 +18,18 @@ app.post("/message", (req, res) => {
 })
 
 io.on('connection', (socket) => {
-    console.log("novo cliente conectado")
+    console.log("A new client has connected")
 
     socket.on('disconnect', () => {
-        console.log("Este cliente desconectou")
+        console.log("The client just disconnected")
     })
 })
 
 
-http.listen(80, (err) => {
-    if(!err) console.log("Servidor iniciado com sucesso")
-    else  console.log("Erro ao iniciar servidor")
+http.listen(process.env.PORT || 3000, (err) => {
+    if(!err){
+        console.log("[+] Server ready!")
+    } else{
+        console.warn("[!] Server could not start")
+    }
 })
